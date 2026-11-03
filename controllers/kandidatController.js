@@ -1,4 +1,4 @@
-const BoardingRoom = require('../models/BoardingRoomsModel');
+const kandidat = require('../models/BoardingRoomsModel');
 const MAX_LIMIT = 50;
 const ROOM_FIELDS = new Set([
   '_id',

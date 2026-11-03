@@ -1,4 +1,4 @@
-const TIPE_KAMAR = ['putra', 'putri', 'campur'];
+const wakil = ['putra', 'putri', 'campur'];
 
 function createBoardingRoomsSummaryModel() {
   return {

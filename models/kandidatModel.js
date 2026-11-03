@@ -48,7 +48,7 @@ const kandidatSchema = new mongoose.Schema(
 );
 
 // Koleksi di MongoDB akan bernama "boardingrooms".
-const BoardingRoom = mongoose.model('BoardingRoom', boardingRoomSchema);
+const kandidat = mongoose.model('kandidat', kandidatSchema);
 
-module.exports = BoardingRoom;
-module.exports.TIPE_KAMAR = TIPE_KAMAR;
+module.exports = kandidat;
+module.exports.kandidat = kandidat;

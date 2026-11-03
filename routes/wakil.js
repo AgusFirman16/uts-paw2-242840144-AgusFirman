@@ -1,5 +1,5 @@
 const express = require('express');
-const createBoardingRoomsSummaryController = require('../controllers/boardingRoomsSummaryController');
+const createBoardingRoomsSummaryController = require('../controllers/wakilController');
 
 function createBoardingRoomsSummaryRouter({ getRooms } = {}) {
   const router = express.Router();
