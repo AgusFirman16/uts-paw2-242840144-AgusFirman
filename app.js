@@ -2,8 +2,8 @@ require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
-const createBoardingRoomsRouter = require('./routes/kandidat');
-const BoardingRoom = require('./models/BoardingRoomsModel');
+const createkandidatouter = require('./routes/kandidat');
+const kandidat = require('./models/kandidat');
 
 const PORT = process.env.PORT || 3000;
 
@@ -20,22 +20,22 @@ function createApp({
       nama: 'Agus Firman',
       nim: '2428240144',
       topik: 26,
-      resource: 'Kamar Kos',
+      resource: 'Pemilihan Raya Kampus (Kandidat)',
       endpoints: [
-        'GET /boarding-rooms',
-        'GET /boarding-rooms?page=1&limit=10',
-        'GET /boarding-rooms?sort=nomorKamar&fields=id,nomorKamar',
-        'GET /boarding-rooms/summary',
-        'GET /boarding-rooms/:id',
-        'POST /boarding-rooms',
-        'PUT /boarding-rooms/:id',
-        'DELETE /boarding-rooms/:id',
-        'GET /boarding-rooms?tipe=putri',
+        'GET /kandidat',
+        'GET /kandidat?page=1&limit=10',
+        'GET /kandidat?sort=nomorKamar&fields=id,nomorkandidat',
+        'GET /kandidat/V2',
+        'GET /kandidat/:id',
+        'POST /kandidat',
+        'PUT /kandidat/:id',
+        'DELETE /kandidat/:id',
+        'GET /kandidat?tipe=putri',
       ],
     });
   });
 
-  app.use('/boarding-rooms', createBoardingRoomsRouter({ apiKey, roomModel }));
+  app.use('/kandidat', createkandidatRouter({ apiKey, roomModel }));
 
   app.use((req, res) => {
     res.status(404).json({
