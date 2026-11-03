@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-const TIPE_KAMAR = ['putra', 'putri', 'campur'];
-const boardingRoomSchema = new mongoose.Schema(
+const { subscribe } = require('../app');
+const kandidat = ['putra', 'putri', 'campur'];
+const kandidatSchema = new mongoose.Schema(
   {
     id: {
       type: Number,
@@ -8,33 +9,37 @@ const boardingRoomSchema = new mongoose.Schema(
       unique: true,
       min: 1,
     },
-    nomorKamar: {
+    noUrut: {
       type: String,
-      required: [true, 'Field nomorKamar wajib diisi'],
+      required: [true, 'Field nomorUrurt wajib diisi'],
       trim: true,
       unique: true,
     },
-    tipe: {
+    nama: {
       type: String,
       required: [true, 'Field tipe wajib diisi'],
       enum: {
-        values: TIPE_KAMAR,
-        message: 'Field tipe harus berisi putra, putri, atau campur',
+        values: nama,
+        message: 'Field nama harus berisi putra, putri, atau campur',
       },
     },
-    hargaPerBulan: {
+    jumlahPendukung: {
       type: Number,
       required: [true, 'Field hargaPerBulan wajib diisi'],
       min: [0, 'Field hargaPerBulan tidak boleh negatif'],
     },
-    fasilitas: {
+    jalur: {
       type: [String],
       default: [],
     },
-    tersedia: {
-      type: Boolean,
+    wakil: {
+      type: subscribe,
       default: true,
     },
+    fakultasId: {
+      type: Object
+      required: [true, 'Field fakultasId wajib diisi'],
+    }
   },
   {
     timestamps: true,

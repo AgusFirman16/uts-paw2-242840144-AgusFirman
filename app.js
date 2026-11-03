@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
-const createBoardingRoomsRouter = require('./routes/boardingRooms');
+const createBoardingRoomsRouter = require('./routes/kandidat');
 const BoardingRoom = require('./models/BoardingRoomsModel');
 
 const PORT = process.env.PORT || 3000;

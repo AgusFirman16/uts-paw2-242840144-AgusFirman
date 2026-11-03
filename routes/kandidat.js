@@ -1,6 +1,6 @@
 const express = require('express');
 const createBoardingRoomsController = require('../controllers/boardingRoomsController');
-const createBoardingRoomsSummaryRouter = require('./boardingRoomsSummary');
+const createBoardingRoomsSummaryRouter = require('./kandidatV2');
 const cekApiKey = require('../middlewares/cekApiKey');
 
 function createBoardingRoomsRouter({ apiKey, roomModel } = {}) {
